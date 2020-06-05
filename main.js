@@ -3,14 +3,19 @@ console.log(`---Iteration 1: Names and Input---`)
 // 1.1 Create a variable `hacker1` with the driver's name.
 let hacker1 = "Matthew";
 
+
 // 1.2 Print `"The driver's name is XXXX"`.
 console.log(`The driver's name is ${hacker1}`);
+
 
 // 1.3 Create a variable `hacker2` with the navigator's name.
 let hacker2 = "Jonah";
 
+
 // 1.4 Print `"The navigator's name is YYYY"`.
 console.log(`The navigator's name is ${hacker2}`);
+
+
 
 console.log(`\n---Iteration 2: Conditionals---`)
 /*2.1. Depending on which name is longer, print:
@@ -32,6 +37,8 @@ if (hacker1.length > hacker2.length) {
   );
 }
 
+
+
 console.log(`\n---Iteration 3: Loops---`)
 /*3.1 Print all the characters of the driver's name, separated by a space and in capitals i.e. "J O H N"*/
 
@@ -44,12 +51,14 @@ console.log(capsSeparated);
 //without loop
 //console.log(hacker1.toUpperCase().split("").join(" "));
 
+
 //3.2 Print all the characters of the navigator's name, in reverse order. i.e. "nhoJ"
 let reverseNav = "";
 for (let i = hacker2.length - 1; i >= 0; i--) {
   reverseNav += hacker2[i];
 }
 console.log(reverseNav);
+
 
 /*3.3 Depending on the lexicographic (alphabetical) order of the strings, print:
 - The driver's name goes first.
@@ -65,9 +74,10 @@ if (hacker1.localeCompare(hacker2) < 0) {
   console.log("What?! You both have the same name?");
 }
 
+
+
 console.log(`\n\n*******Bonus Time!******* \n\n---Bonus 1:---`)
-/*Go to lorem ipsum generator and:
-*/
+
 //Generate 3 paragraphs. Store the text in a variable type of string.
 
 let loremParagraphs = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque augue et purus feugiat, sit amet volutpat est consectetur. Nullam congue porta tellus, pulvinar tempor lorem aliquet ut. Sed condimentum dolor in tellus et tincidunt, rutrum tempor eros placerat. Morbi iaculis nulla in vulputate hendrerit. Nullam luctus elit quis nulla aliquam accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur rhoncus lacus at odio tempus, nec pharetra nunc sagittis. Nunc ac luctus massa. Ut ex dui, tristique non cursus sit amet, feugiat eu nisl. Nunc semper nisi eu eros efficitur lobortis. Maecenas vitae lorem feugiat, fermentum erat a, dapibus magna. Nulla dapibus vulputate ante in bibendum. Aenean eget lacus quis ex aliquam iaculis ac ac ex. Nunc consectetur egestas diam, nec tincidunt et felis dapibus vel. Nulla at rhoncus ligula. Aliquam viverra ante eget ipsum pretium ultricies.
@@ -91,22 +101,24 @@ console.log(`Wordcount without a loop ${loremParagraphs.split(" ").length}`);
 
 // Make your program count the number of times the Latin word et appears.
 
-(searchFor = " et "), (count = 0), (pos = loremParagraphs.indexOf(searchFor));
+(searchFor = " et "), (etCount = 0), (pos = loremParagraphs.indexOf(searchFor));
 
 while (pos > -1) {
-  ++count;
+  ++etCount;
   pos = loremParagraphs.indexOf(searchFor, ++pos);
 }
-console.log(`This is a simple way to count "et".  The result is ${count}`);
+console.log(`There are ${etCount} instances of the word 'et'`);
 
 //another way with the help of google.
-let etCount = (loremParagraphs.match(/ et /g) || []).length;
+let etCount1 = (loremParagraphs.match(/ et /g) || []).length;
 console.log(
-  `This is the 2nd way.  "et" is used ${etCount} times in the 3 paragraphs`
+  `This is the 2nd way.  "et" is used ${etCount1} times`
 );
 //a 3rd way with google.
 let etCount2 = loremParagraphs.split(" et ").length - 1;
-console.log(`This is 3rd way to count "et" The result is ${etCount2}`);
+console.log(`This is the 3rd way.  "et" is used ${etCount2} times`);
+
+
 
 console.log(`\n---Bonus 2:---`)
 /*Create a new variable phraseToCheck and have it contain some string value. Write a code that will check if the value we assigned to this variable is a Palindrome. Here are some examples of palindromes:
@@ -154,18 +166,18 @@ if (noPuncReverse === noPuncForward) {
 
 //I fell down into the rabbit hole and created this.
 
-// let phraseToCheck = "taco cat";
-// let forward;
-// let reverse;
+let phraseToCheck1 = "Nerd Matthew";
+let forward;
+let reverse;
 
-// forward = phraseToCheck.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, "");
-// console.log(`This is the phrase forward "${forward}""`);
+forward = phraseToCheck1.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, "");
+console.log(`\nThis is the phrase forward "${forward}""`);
 
-// reverse = forward.split("").reverse().join("")
-// console.log(`This is the phrase backwards "${reverse}""`);
+reverse = forward.split("").reverse().join("")
+console.log(`This is the phrase backwards "${reverse}""`);
 
-// if (reverse === forward) {
-//   console.log(`This phrase "${phraseToCheck}" is a super cool palindrome!`)
-// } else {
-//   console.log(`Palindromes are hard. :( Try again. `)
-//}
+if (reverse === forward) {
+  console.log(`The phrase "${phraseToCheck1}" is a super cool palindrome!`)
+} else {
+  console.log(`Palindromes are hard. :( Try again. `)
+}
